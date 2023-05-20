@@ -59,7 +59,16 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-
+ //dding eventlistener to track keydowns and play corresponding audio for that key 
+ window.addEventListener('keydown',e=>{
+  
+  const audio= document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  if(!audio){
+    return
+  }
+  audio.currentTime=0;
+  audio.play();
+ })
 </script>
 
 
